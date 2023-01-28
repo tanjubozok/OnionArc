@@ -14,10 +14,11 @@ public class Repository<T> : IRepository<T> where T : class, new()
         _context = context;
     }
 
-    public async Task CreateAsync(T entity)
+    public async Task<T> CreateAsync(T entity)
     {
         await _context.Set<T>().AddAsync(entity);
         await _context.SaveChangesAsync();
+        return entity;
     }
 
     public async Task DeleteAsync(T entity)

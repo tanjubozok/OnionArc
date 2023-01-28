@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnionArc.Domain.Entities;
 using OnionArc.Persistence.Configurations;
+using OnionArc.Persistence.Seeds;
 
 namespace OnionArc.Persistence.Context;
 
@@ -14,6 +15,11 @@ public class DatabaseContext : DbContext
     {
         modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
         modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+
+        modelBuilder.ApplyConfiguration(new AppRoleSeed());
+        modelBuilder.ApplyConfiguration(new AppUserSeed());
+        modelBuilder.ApplyConfiguration(new CategorySeed());
+        modelBuilder.ApplyConfiguration(new ProductSeed());
     }
 
     public DbSet<Product> Products { get; set; }
