@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace OnionArc.Application.Features.CQRS.Commands;
+namespace OnionArc.Application.Features.CQRS.Commands.Categories;
 
 public class UpdateCategoryCommandRequest : IRequest
 {

@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using OnionArc.Application.Abstract;
-using OnionArc.Application.Features.CQRS.Commands;
+using OnionArc.Application.Features.CQRS.Commands.Categories;
 using OnionArc.Domain.Entities;
 
-namespace OnionArc.Application.Features.CQRS.Handlers;
+namespace OnionArc.Application.Features.CQRS.Handlers.Categories;
 
 public class RemoveCategoryCommandHandler : IRequestHandler<RemoveCategoryCommandRequest>
 {

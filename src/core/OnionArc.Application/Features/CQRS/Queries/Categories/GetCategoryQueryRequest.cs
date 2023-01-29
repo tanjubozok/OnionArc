@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using OnionArc.Application.Dtos.CategoryDtos;
 
-namespace OnionArc.Application.Features.CQRS.Queries;
+namespace OnionArc.Application.Features.CQRS.Queries.Categories;
 
 public class GetCategoryQueryRequest : IRequest<CategoryListDto?>
 {

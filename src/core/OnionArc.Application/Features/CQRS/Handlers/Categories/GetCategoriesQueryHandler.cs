@@ -2,10 +2,10 @@
 using MediatR;
 using OnionArc.Application.Abstract;
 using OnionArc.Application.Dtos.CategoryDtos;
-using OnionArc.Application.Features.CQRS.Queries;
+using OnionArc.Application.Features.CQRS.Queries.Categories;
 using OnionArc.Domain.Entities;
 
-namespace OnionArc.Application.Features.CQRS.Handlers;
+namespace OnionArc.Application.Features.CQRS.Handlers.Categories;
 
 public class GetCategoriesQueryHandler : IRequestHandler<GetCategoriesQueryRequest, List<CategoryListDto>>
 {

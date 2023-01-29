@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using OnionArc.Application.Features.CQRS.Commands;
-using OnionArc.Application.Features.CQRS.Queries;
+using OnionArc.Application.Features.CQRS.Commands.Categories;
+using OnionArc.Application.Features.CQRS.Queries.Categories;
 
 namespace OnionArc.API.Controllers;
 

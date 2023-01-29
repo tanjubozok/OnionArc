@@ -1,9 +1,9 @@
 ﻿using MediatR;
 using OnionArc.Application.Abstract;
-using OnionArc.Application.Features.CQRS.Commands;
+using OnionArc.Application.Features.CQRS.Commands.Categories;
 using OnionArc.Domain.Entities;
 
-namespace OnionArc.Application.Features.CQRS.Handlers;
+namespace OnionArc.Application.Features.CQRS.Handlers.Categories;
 
 public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommandRequest>
 {
@@ -20,7 +20,7 @@ public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryComman
         if (updatedEntity is not null)
         {
             updatedEntity.Definition = request.Definition;
-            await _repository.UpdateAsync(updatedEntity);
+            await _repository.SaveChangesAsync();
         }
         return Unit.Value;
     }

@@ -2,17 +2,17 @@
 using MediatR;
 using OnionArc.Application.Abstract;
 using OnionArc.Application.Dtos.CategoryDtos;
-using OnionArc.Application.Features.CQRS.Commands;
+using OnionArc.Application.Features.CQRS.Commands.Categories;
 using OnionArc.Domain.Entities;
 
-namespace OnionArc.Application.Features.CQRS.Handlers;
+namespace OnionArc.Application.Features.CQRS.Handlers.Categories;
 
-public class GetCategoryCommandHandler : IRequestHandler<CreateCategoryCommandRequest, CategoryCreateDto?>
+public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommandRequest, CategoryCreateDto?>
 {
     private readonly IRepository<Category> _repository;
     private readonly IMapper _mapper;
 
-    public GetCategoryCommandHandler(IRepository<Category> repository, IMapper mapper)
+    public CreateCategoryCommandHandler(IRepository<Category> repository, IMapper mapper)
     {
         _repository = repository;
         _mapper = mapper;

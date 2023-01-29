@@ -17,7 +17,7 @@ public static class ServiceRegistration
             op.AddProfiles(new List<Profile>()
             {
                 new CategoryProfile(),
-
+                new ProductProfile()
             });
         });
     }
