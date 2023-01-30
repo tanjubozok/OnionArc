@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using OnionArc.Application.Features.CQRS.Commands.Users;
 using OnionArc.Application.Features.CQRS.Queries.Users;
 using OnionArc.Application.Tools;
 
@@ -24,5 +25,12 @@ public class AuthController : ControllerBase
             return Created("", JwtTokenGenerator.GenerateToken(dto));
         else
             return BadRequest("Kullanıcı adı veya şifre hatalıdır.");
+    }
+
+    [HttpPost("action")]
+    public IActionResult Register(RegisterUserCommandRequest request)
+    {
+        var data = _mediator.Send(request);
+        return Created("", data);
     }
 }
