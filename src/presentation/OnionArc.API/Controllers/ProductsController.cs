@@ -1,10 +1,12 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OnionArc.Application.Features.CQRS.Commands.Products;
 using OnionArc.Application.Features.CQRS.Queries.Products;
 
 namespace OnionArc.API.Controllers;
 
+[Authorize(Roles = "Admin,Member")]
 [Route("api/[controller]")]
 [ApiController]
 public class ProductsController : ControllerBase
